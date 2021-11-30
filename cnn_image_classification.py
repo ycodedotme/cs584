@@ -135,6 +135,8 @@ def build_model():
     x = Dense(64, activation='relu')(x)
     # x = BatchNormalization()(x)
     x = Dropout(0.3)(x)
+    
+    x = Flatten()(x)
 
     classifier = Dense(num_classes, activation='softmax')(x)
 
